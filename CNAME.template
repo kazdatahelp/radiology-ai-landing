@@ -1,0 +1,17 @@
+# Custom Domain Configuration
+# 
+# To use a custom domain:
+# 1. Rename this file to 'CNAME' (remove .template extension)
+# 2. Replace the line below with your domain
+# 3. Configure DNS with your domain registrar:
+#    - For apex domain (radiology-ai.kz): Add A records pointing to GitHub's IPs
+#    - For subdomain (www.radiology-ai.kz): Add CNAME record pointing to kazdatahelp.github.io
+#
+# GitHub's IP addresses for A records:
+# 185.199.108.153
+# 185.199.109.153
+# 185.199.110.153
+# 185.199.111.153
+#
+# Example (uncomment and modify):
+# radiology-ai.kz

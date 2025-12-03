@@ -1,0 +1,5 @@
+# This file ensures the images directory is tracked by git
+# Add your images here:
+# - logo.png
+# - hero-screenshot.png
+# - og-image.png (for social sharing)
