@@ -71,12 +71,35 @@
       z-index: 100;
       transition: all 0.3s ease;
       padding: 16px 0;
+      /* Modern frozen glass morphism style */
+      background: rgba(15, 23, 42, 0.75);
+      backdrop-filter: blur(20px) saturate(180%);
+      -webkit-backdrop-filter: blur(20px) saturate(180%);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+      /* Ambient shadow for depth + inset highlight for glass effect */
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1),
+                  0 1px 0 rgba(255, 255, 255, 0.05) inset;
+      /* Performance optimization for backdrop-filter */
+      will-change: backdrop-filter;
+      contain: layout style paint;
+    }
+
+    /* Fallback for browsers without backdrop-filter support */
+    @supports not ((-webkit-backdrop-filter: blur(1px)) or (backdrop-filter: blur(1px))) {
+      nav {
+        background: rgba(15, 23, 42, 0.95);
+      }
+      nav.scrolled {
+        background: rgba(15, 23, 42, 0.98);
+      }
     }
 
     nav.scrolled {
-      background: rgba(15, 23, 42, 0.95);
-      backdrop-filter: blur(12px);
-      border-bottom: 1px solid var(--slate-800);
+      background: rgba(15, 23, 42, 0.85);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+      /* Enhanced ambient shadow + stronger inset highlight on scroll */
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15),
+                  0 1px 0 rgba(255, 255, 255, 0.08) inset;
     }
 
     .nav-content {
